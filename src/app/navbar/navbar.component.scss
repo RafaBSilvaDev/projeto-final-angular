@@ -1,10 +1,12 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 a {
-  color: rgb(9, 111, 228);
+  color: RGB(30, 37, 81);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -15,6 +17,7 @@ a:hover {
 
 .logo {
   height: 60px;
+  float: left;
 }
 
 nav {
@@ -23,8 +26,9 @@ nav {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   background-color: white;
-  border-bottom: 3px solid rgb(9, 111, 228);
+  border-bottom: 3px solid rgb(154, 155, 156);
   height: 13vh;
+  box-shadow: 100px
 }
 
 .nav-list {
@@ -35,3 +39,25 @@ nav {
 .nav-list li {
   margin-left: 32px;
 }
+
+#nomeLogo {
+  color: RGB(30, 37, 81);
+  float: left;
+  padding-top: 18px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  height: 35px;
+}
+
+#nomeLogo1 {
+  color: gray;
+  font-size: 15px;
+  height: 50px;
+  padding-top: 30px;
+  padding-left: 70px;
+
+}
+
+
+
+
