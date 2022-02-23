@@ -1,2 +1,62 @@
+<div class="d-flex">
+  <button #botaoadc type="button" data-bs-toggle="modal" data-bs-target="#Modal" id="btn_adc" class="btn btn-sucess">Adicionar Jogo</button>
+</div>
 
+<table >
+  <thead>
+    <tr>
+      <td scope="col">Posição</td>
+      <td scope="col">Nome do jogo</td>
+      <td scope="col">Tipo do jogo</td>
+      <td scope="col">Data de lanç.</td>
+      <td scope="col">Ações</td>
 
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let lista of listaJogo">
+      <td>{{lista.id}}</td>
+      <td>{{lista.nomeJogo}}</td>
+      <td>{{lista.tipoJogo}}</td>
+      <td>{{lista.dataJogo}}</td>
+      <td>
+        <button class="btn btn-info" value="Edit" (click)="editarJogo(lista)" data-bs-toggle="modal" data-bs-target="#Modal" class="btn btn-success me-2">Editar</button>
+        <button class="btn btn-danger mx-3" value="Delete" (click)="deletarJogo(lista)">Deletar</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal" tabindex="-1" id="Modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Adicionar jogo</h5>
+        <button type="button" class="btn-close" jogo-bs-dismiss="modal" aria-label="Close"
+        id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nome do jogo</label>
+            <input type="text" formControlName="nomeJogo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tipo do jogo</label>
+            <input type="text" formControlName="tipoJogo" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Data do jogo</label>
+            <input type="text" formControlName="dataJogo" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal" (click)="fecharModal()">Close</button>
+        <button type="button" *ngIf="btnSaveShow" (click)="addJogo()" class="btn btn-primary">Adicionar</button>
+        <button type="button" *ngIf="btnUpdateShow" (click)="updateJogo()" class="btn btn-primary">Atualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
